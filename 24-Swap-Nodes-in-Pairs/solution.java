@@ -19,12 +19,9 @@ public class Solution {
         
         while (head != null && head.next != null) {
             ListNode temp = head.next.next;
-            
             pre.next = head.next;
-            pre = pre.next;
-            pre.next = head;
+            pre.next.next = head;
             pre = head;
-            
             head = temp;
         }
         if (head != null) {
