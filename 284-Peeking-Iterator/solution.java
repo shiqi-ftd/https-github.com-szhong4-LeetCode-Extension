@@ -21,7 +21,11 @@ class PeekingIterator implements Iterator<Integer> {
 	@Override
 	public Integer next() {
 	    int temp = peek;
-	    peek = peekItr.hasNext() ? peekItr.next():null;
+	    if (peekItr.hasNext()) {
+	        peek = peekItr.next();
+	    } else {
+	        peek = null;
+	    }
 	    return temp;
 	}
 
