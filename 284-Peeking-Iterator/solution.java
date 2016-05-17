@@ -2,7 +2,7 @@
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 class PeekingIterator implements Iterator<Integer> {
     Iterator<Integer> peekItr;
-    int peek;
+    Integer peek;
 	public PeekingIterator(Iterator<Integer> iterator) {
 	    // initialize any member here.
 	    peekItr = iterator;
