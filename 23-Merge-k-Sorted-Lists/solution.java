@@ -6,6 +6,10 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+ 
+ // Time Complexity:
+ // k is the size, n is the total cnt of elements
+ // log(log(k) * n)
 public class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
@@ -13,7 +17,7 @@ public class Solution {
     }
     public ListNode mergeHelper(ListNode[] lists, int start, int end) {
         if (start == end) {
-            return lists.get(start);
+            return lists[start];
         }
         int mid = start + (end - start) / 2;
         ListNode left = mergeHelper(lists, start, mid);
@@ -23,7 +27,7 @@ public class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) return null;
             else if (l1 == null) return l2;
-                else return l1;
+                else if (l2 == null) return l1;
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
         while (l1 != null && l2 != null) {
