@@ -8,8 +8,8 @@
  */
 public class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists == null || lists.size == 0) return null;
-        return mergeHelper(lists, 0, lists.size() - 1);
+        if (lists == null || lists.length == 0) return null;
+        return mergeHelper(lists, 0, lists.length - 1);
     }
     public ListNode mergeHelper(ListNode[] lists, int start, int end) {
         if (start == end) {
