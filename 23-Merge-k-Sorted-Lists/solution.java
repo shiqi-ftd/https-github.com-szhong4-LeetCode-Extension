@@ -20,7 +20,7 @@ public class Solution {
         ListNode right = mergeHelper(lists, mid + 1, end);
         return mergeTwoLists(left, right);
     }
-    public mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) return null;
             else if (l1 == null) return l2;
                 else return l1;
