@@ -18,7 +18,6 @@ public class Solution {
             counter += 1;
             if (counter == end) {
                 kth = new ArrayList(cur);
-                return;
             }  
             return;
         }
