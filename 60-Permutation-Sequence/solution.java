@@ -17,7 +17,7 @@ public class Solution {
         if (cur.size() == nums.length) {
             counter += 1;
             if (counter == end) {
-                kth = new ArrayList(cur);
+                kth = cur;
             }  
             return;
         }
