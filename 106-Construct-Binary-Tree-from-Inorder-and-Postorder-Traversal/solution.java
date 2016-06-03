@@ -9,12 +9,12 @@
  */
 public class Solution {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        return buildTree(inorder, inorder.length-1, 0, postorder, postorder.length-1);
+        return buildTree(inorder, 0, inoder.length - 1, postorder, postorder.length-1);
     }
     
     private TreeNode buildTree(int[] inorder, int inStart, int inEnd, int[] postorder,
             int postStart) {
-        if (postStart < 0 || inStart < inEnd)
+        if (postStart < 0 || inStart > inEnd)
             return null;
     
         //The last element in postorder is the root.
@@ -22,15 +22,15 @@ public class Solution {
     
         //find the index of the root from inorder. Iterating from the end.
         int rIndex = inStart;
-        for (int i = inStart; i >= inEnd; i--) {
+        for (int i = inStart; i <= inEnd; i++) {
             if (inorder[i] == postorder[postStart]) {
                 rIndex = i;
                 break;
             }
         }
         //build right and left subtrees. Again, scanning from the end to find the sections.
-        root.right = buildTree(inorder, inStart, rIndex + 1, postorder, postStart-1);
-        root.left = buildTree(inorder, rIndex - 1, inEnd, postorder, postStart - (inStart - rIndex) -1);
+        root.right = buildTree(inorder, rIndex + 1, inEnd, postorder, postStart - 1);
+        root.left = buildTree(inorder, inStart, rIndex - 1, postorder, postStart - (rIndex - inStart) -1);
         return root;
     }
 }
